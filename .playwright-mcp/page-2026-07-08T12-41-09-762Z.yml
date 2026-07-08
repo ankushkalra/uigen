@@ -1,0 +1,47 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e3]:
+    - generic [ref=f2e5]:
+      - heading "React Component Generator" [level=1] [ref=f2e7]
+      - generic [ref=f2e9]:
+        - generic [ref=f2e53]:
+          - generic [ref=f2e54]:
+            - generic [ref=f2e57]: Create a basic button component
+            - img [ref=f2e60]
+          - generic [ref=f2e63]:
+            - img [ref=f2e66]
+            - generic [ref=f2e71]:
+              - paragraph [ref=f2e73]: This is a static response. You can place an Anthropic API key in the .env file to use the Anthropic API for component generation. Let me create an App.jsx file to display the component.
+              - generic [ref=f2e76]: Creating App.jsx
+              - separator [ref=f2e77]
+              - paragraph [ref=f2e79]: I'll create a Counter component for you.
+              - generic [ref=f2e82]: Creating Counter.jsx
+              - separator [ref=f2e83]
+              - paragraph [ref=f2e85]: Now let me enhance the component with better styling.
+              - generic [ref=f2e88]: Updating Counter.jsx
+              - separator [ref=f2e89]
+              - paragraph [ref=f2e91]: Perfect! I've creat
+              - generic [ref=f2e92]:
+                - img [ref=f2e93]
+                - generic [ref=f2e95]: Generating...
+        - generic [ref=f2e20]:
+          - textbox "Describe the React component you want to create..." [disabled] [ref=f2e21]
+          - button [disabled] [ref=f2e22]:
+            - img [ref=f2e23]
+    - separator [ref=f2e26]
+    - generic [ref=f2e28]:
+      - generic [ref=f2e29]:
+        - tablist [ref=f2e31]:
+          - tab "Preview" [selected] [ref=f2e32]
+          - tab "Code" [ref=f2e33]
+        - generic [ref=f2e34]:
+          - button "Sign In" [ref=f2e35]
+          - button "Sign Up" [ref=f2e36]
+      - iframe [ref=f2e96]:
+        - generic [ref=f4e5]:
+          - heading "Counter" [level=2] [ref=f4e6]
+          - generic [ref=f4e7]: "0"
+          - generic [ref=f4e8]:
+            - button "Decrease" [ref=f4e9] [cursor=pointer]
+            - button "Reset" [ref=f4e10] [cursor=pointer]
+            - button "Increase" [ref=f4e11] [cursor=pointer]
+  - alert [ref=f2e47]
