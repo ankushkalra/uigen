@@ -23,7 +23,7 @@ jobs:
       pull-requests: read
       issues: read
       id-token: write
-      actions: write # Required for Claude to read CI results on PRs and to write to the Actions cache
+      actions: write # Required for Claude to read CI results on PRs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -34,15 +34,24 @@ jobs:
           npm run setup
           npm run dev:daemon
 
+      - name: Install Bun
+        id: setup-bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+          no-cache: true
+
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1
         with:
+          path_to_bun_executable: ${{ steps.setup-bun.outputs.bun-path }}
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          show_full_output: "true" # TEMP: debugging early is_error crash, remove after diagnosis
 
-          # This is an optional setting that allows Claude to read CI results on PRs and use the Actions cache
+          # This is an optional setting that allows Claude to read CI results on PRs
           additional_permissions: |
-            actions: write
+            actions: read
 
           claude_args: |
             --append-system-prompt "The project is already set up with all dependencies installed. The server is already running at localhost:3000. Logs from it are being written to logs.txt. If needed, you can query the db with the 'sqlite3' cli. If needed, use the mcp__playwright set of tools to launch a browser and interact with the app."
